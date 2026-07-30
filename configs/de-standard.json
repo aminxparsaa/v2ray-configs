@@ -1,0 +1,49 @@
+{
+    "name": "کانفیگ استاندارد آلمان",
+    "description": "سرور پایدار آلمان مناسب برای کاربران عادی",
+    "config": {
+        "inbounds": [
+            {
+                "port": 1080,
+                "protocol": "socks",
+                "settings": {
+                    "udp": true
+                }
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "vmess",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "de1.example.com",
+                            "port": 443,
+                            "users": [
+                                {
+                                    "id": "a3482e88-686a-4a58-8126-99c9034e4b09",
+                                    "alterId": 0,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "security": "tls",
+                    "tlsSettings": {
+                        "serverName": "de1.example.com"
+                    },
+                    "wsSettings": {
+                        "path": "/ray"
+                    }
+                }
+            }
+        ]
+    },
+    "price": 35000,
+    "duration_days": 30,
+    "server_location": "آلمان",
+    "stock": 20
+}
