@@ -1,0 +1,38 @@
+{
+    "name": "کانفیگ Trojan آلمان",
+    "description": "سرور پایدار آلمان - پروتکل Trojan",
+    "type": "trojan",
+    "config": {
+        "inbounds": [
+            {
+                "port": 1080,
+                "protocol": "socks",
+                "settings": {"udp": true}
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": "trojan",
+                "settings": {
+                    "servers": [
+                        {
+                            "address": "de1.example.com",
+                            "port": 443,
+                            "password": "your-password-here"
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "network": "ws",
+                    "security": "tls",
+                    "tlsSettings": {"serverName": "de1.example.com"},
+                    "wsSettings": {"path": "/trojan"}
+                }
+            }
+        ]
+    },
+    "price": 35000,
+    "duration_days": 30,
+    "server_location": "آلمان",
+    "stock": 20
+}
